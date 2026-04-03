@@ -1,0 +1,356 @@
+:root {
+    --primary-color: #004488; /* Глубокий синий (доверие) */
+    --accent-color: #f39c12;  /* Оранжевый (внимание) */
+    --bg-light: #f9f9f9;
+    --text-dark: #333;
+    --text-light: #fff;
+    --border-radius: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background: #fff;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.phone-link {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0,68,136,0.8), rgba(0,68,136,0.8)), 
+                url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1350&q=80'); /* Заглушка фото */
+    background-size: cover;
+    background-position: center;
+    color: var(--text-light);
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    display: block;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.btn-primary {
+    display: inline-block;
+    background: var(--accent-color);
+    color: #fff;
+    padding: 15px 35px;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    margin-top: 25px;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background: #e67e22;
+    transform: translateY(-2px);
+}
+
+/* Grid helper classes */
+.section-title {
+    text-align: center;
+    margin: 60px 0 10px;
+    font-size: 2rem;
+}
+
+.section-subtitle {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #666;
+}
+
+.grid-4, .grid-3 {
+    display: grid;
+    gap: 25px;
+    margin-bottom: 60px;
+}
+
+.grid-4 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.grid-3 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+
+/* Cards */
+.card {
+    background: #fff;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-bottom: 4px solid var(--primary-color);
+}
+
+.icon {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+
+.service-item {
+    background: #fff;
+    padding: 40px;
+    border: 1px solid #eee;
+    border-radius: var(--border-radius);
+}
+
+.bg-light { background: var(--bg-light); padding: 20px 0; }
+
+/* Steps */
+.steps-flex {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 0;
+    flex-wrap: wrap;
+}
+
+.step {
+    text-align: center;
+    flex: 1;
+    min-width: 200px;
+}
+
+.step span {
+    width: 50px;
+    height: 50px;
+    background: var(--primary-color);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Form Section */
+.form-section {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 80px 0;
+}
+
+.form-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.main-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.main-form input {
+    padding: 15px;
+    border-radius: var(--border-radius);
+    border: none;
+    font-size: 1rem;
+}
+
+.btn-submit {
+    background: var(--accent-color);
+    color: #fff;
+    border: none;
+    padding: 18px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
+
+.btn-link {
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    padding: 40px 0;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 1.8rem; }
+    .steps-flex { gap: 30px; }
+}
+.form-section {
+    background: linear-gradient(rgba(0, 68, 136, 0.9), rgba(0, 68, 136, 0.9)), 
+                url('../img/truck-bg.jpg'); /* Если есть фоновое фото с машинами */
+    background-size: cover;
+    padding: 60px 0;
+}
+
+.form-wrapper { max-width: 900px; margin: 0 auto; text-align: left; }
+.form-wrapper h2 { text-align: center; font-size: 1.5rem; margin-bottom: 10px; }
+.form-wrapper p { text-align: center; margin-bottom: 40px; }
+
+.main-form { display: flex; flex-direction: column; gap: 20px; }
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.input-group { display: flex; flex-direction: column; gap: 5px; }
+.input-group label { font-size: 0.85rem; color: #f3f3f3; font-weight: bold; }
+.input-group input, .input-group textarea {
+    padding: 12px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Чуть более заметная граница */
+    background: #ffffff; /* Чистый белый фон — это стандарт для удобства */
+    color: #333333; /* Темный текст, который легко читать */
+    width: 100%;
+}
+
+/* Добавь это ниже, чтобы при нажатии на поле оно подсвечивалось */
+.input-group input:focus, .input-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 5px rgba(243, 156, 18, 0.5);
+}
+
+.radio-section { margin: 10px 0; }
+.radio-group { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 10px; }
+.radio-group label { font-size: 0.9rem; cursor: pointer; display: flex; align-items: center; gap: 5px; }
+
+.checkbox-group { display: flex; align-items: center; gap: 10px; font-size: 0.85rem; }
+
+.btn-submit {
+    background: var(--accent-color);
+    color: #333;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    align-self: center;
+    transition: 0.3s;
+}
+.btn-submit:hover { transform: scale(1.05); background: #ffd32a; }
+/* Контейнер для всей группы */
+.messenger-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Главная кнопка-чат */
+.messenger-main-btn {
+    width: 60px;
+    height: 60px;
+    background-color: #004488; /* Твой синий цвет */
+    color: white;
+    border-radius: 50%;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+/* Список мессенджеров (скрыт по умолчанию) */
+.messenger-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: 0.3s all ease-in-out;
+}
+
+.messenger-list.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Общий стиль для иконок мессенджеров */
+.messenger-item {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.messenger-item:hover { transform: scale(1.1); }
+
+/* Цвета мессенджеров */
+.whatsapp { background-color: #25D366; }
+.viber { background-color: #7360f2; }
+.telegram { background-color: #0088cc; }
+
+/* Анимация пульсации для главной кнопки */
+.messenger-main-btn:hover { background-color: #003366; }
